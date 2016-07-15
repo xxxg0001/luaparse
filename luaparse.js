@@ -1592,7 +1592,10 @@
     if (trackLocations) marker = createLocationMarker();
     expression = parsePrefixExpression();
 
-    if (null == expression) return unexpected(token);
+    if (null == expression)  {
+      if (consume("%")) return;//lua4.x upvalue 
+      return unexpected(token);
+    }
     if (',='.indexOf(token.value) >= 0) {
       var variables = [expression]
         , init = []
