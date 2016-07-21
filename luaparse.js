@@ -1592,8 +1592,7 @@
     if (trackLocations) marker = createLocationMarker();
     expression = parsePrefixExpression();
 
-    if (null == expression)  {
-      if (consume("%")) return;//lua4.x upvalue 
+    if (null == expression)  { 
       return unexpected(token);
     }
     if (',='.indexOf(token.value) >= 0) {
@@ -1888,7 +1887,7 @@
   }
 
   //     prefixexp ::= prefix {suffix}
-  //     prefix ::= Name | '(' exp ')'
+  //     prefix ::= Name | '(' exp ')' | '%' Name
   //     suffix ::= '[' exp ']' | '.' Name | ':' Name args | args
   //
   //     args ::= '(' [explist] ')' | tableconstructor | String
@@ -1908,7 +1907,10 @@
       base = parseExpectedExpression();
       expect(')');
       base.inParens = true; // XXX: quick and dirty. needed for validateVar
-    } else {
+    } else if(consume('%')) {
+      name = token.value;
+      base = parseIdentifier();
+    }  else {
       return null;
     }
 

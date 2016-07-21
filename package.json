@@ -1,15 +1,15 @@
 {
-  "name": "luaparse",
+  "name": "@xxxg0001/luaparse",
   "version": "0.2.1",
-  "description": "A Lua parser in JavaScript",
+  "description": "A Lua parser in JavaScript forked from oxyc/luaparse and skip lua 4.x upvalue",
   "keywords": [
     "ast",
     "lua",
     "parser",
-    "parsing"
+    "parsing"  
   ],
-  "homepage": "https://oxyc.github.io/luaparse/",
-  "bugs": "https://github.com/oxyc/luaparse/issues",
+  "homepage": "https://github.com/xxxg0001/luaparse",
+  "bugs": "https://github.com/xxxg0001/luaparse/issues",
   "license": "MIT",
   "author": "Oskar Schöldström <public@oxy.fi> (http://www.oxy.fi/)",
   "files": [
@@ -23,7 +23,7 @@
   "man": "./docs/luaparse.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oxyc/luaparse.git"
+    "url": "https://github.com/xxxg0001/luaparse.git"
   },
   "scripts": {
     "test": "make qa"
